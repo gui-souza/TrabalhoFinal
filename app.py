@@ -12,12 +12,6 @@ def hello():
     elif request.method == "POST":
         return request.json
 
-@app.route("/usuarios", methods=["POST"])
-def login():
-    email = request.json["email"]
-    senha = request.json["senha"]
-    return jsonify(query(f"SELECT * FROM usuarios WHERE email = %s and senha=%s", (email, senha)))
-
 def update(tabela, chave, valor_chave, colunas, valores):
     sets = [f"{coluna} = %s" for coluna in colunas]
     execute(f"""UPDATE {tabela} SET {",".join(sets)} WHERE {chave} = %s""", valores + [valor_chave])

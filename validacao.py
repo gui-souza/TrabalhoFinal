@@ -1,3 +1,5 @@
+from models import get_diretor
+
 def valida_diretor(nome_completo):
     if len(nome_completo) == 0:
         return False
@@ -10,11 +12,17 @@ def valida_genero(nome):
 
     return True
 
-def valida_filmes(titulo, ano, classificacao, preco, ):
-    if len(nome_completo) == 0:
+def valida_filme(titulo, ano, classificacao, preco, **kwargs):
+    if len(titulo) == 0:
         return False
 
-    if len(CPF) != 14:
+    if len(ano) != 4:
+        return False
+
+    if len(classificacao) == 0:
+        return False
+
+    if len(preco) == 0:
         return False
 
     return True

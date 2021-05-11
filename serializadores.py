@@ -65,3 +65,39 @@ def filme_from_db(filme):
 
 def nome_filme_from_web(**kwargs):
     return kwargs["titulo"] if "titulo" in kwargs else ""
+
+def locacao_from_web(**kwargs):
+    return {
+        "filmes_id": kwargs["filmes_id"] if "filmes_id" in kwargs else "",
+        "usuarios_id": kwargs["usuarios_id"] if "usuarios_id" in kwargs else "",
+    }
+
+def locacao_from_db(locacoes):
+    return {
+        "data_inicio": locacoes["data_inicio"],
+        "data_fim": locacoes["data_fim"],
+        "filmes_id": locacoes["filmes_id"],
+        "usuarios_id": locacoes["usuarios_id"],
+    }
+
+#def nome_locacao_from_web(**kwargs):
+#    return kwargs["titulo"] if "titulo" in kwargs else ""
+
+def pagamento_from_web(**kwargs):
+    return {
+        "tipo": kwargs["tipo"] if "tipo" in kwargs else "",
+        "status": kwargs["status"] if "status" in kwargs else "",
+    }
+
+def pagamento_from_db(pagamento):
+    return {
+        "tipo": pagamento["tipo"],
+        "status": pagamento["status"],
+        "codigo_pagamento": pagamento["codigo_pagamento"],
+        "valor": str(pagamento["valor"]),
+        "data": pagamento["data"],
+        "locacoes_id": pagamento["locacoes_id"],
+    }
+
+#def nome_pagamento_from_web_from_web(**kwargs):
+#    return kwargs["titulo"] if "titulo" in kwargs else ""

@@ -3,8 +3,8 @@ from mysql.connector import connect
 CONFIGURACOES_BD = {
     "host":"localhost",
     "user":"root",
-    "password":"225456",
-    "database":"locadora",
+    "password":"root",
+    "database":"base_nova",
 }
 
 def execute(sql, params=None):
